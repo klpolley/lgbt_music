@@ -1,0 +1,27 @@
+<html>
+
+
+<head>
+    {% if title %}
+    <title>{{ title }} - Local Music</title>
+    {% else %}
+    <title>Local Music</title>
+    {% endif %}
+</head>
+
+<body>
+    <h1>Ithaca Music</h1>
+    <hr/>
+    <div>
+        <a href="/index">Home Page</a>
+        <a href="/list_artists">List of Artists</a>
+        <a href="/new_artist">Create New Artist</a>
+    </div>
+    <hr/>
+
+    {% block content %}{% endblock %}
+
+</body>
+
+
+</html>
