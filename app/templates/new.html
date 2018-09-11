@@ -3,6 +3,38 @@
 {% block content %}
 
     <h2>Create New Artist</h2>
-    <p>This page is currently under construction.</p>
+
+     <form action="" method="post" novalidate>
+
+        {{ form.hidden_tag() }} <!-- protects form against attack -->
+
+        <p>
+            {{ form.name.label }}<br/>
+            {{ form.name() }}<br/>
+            {% for error in form.name.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.hometown.label }}<br/>
+            {{ form.hometown() }}<br/>
+            {% for error in form.hometown.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.bio.label }}<br/>
+            {{ form.bio() }}<br/>
+            {% for error in form.bio.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+
+
+    </form>
 
 {% endblock %}

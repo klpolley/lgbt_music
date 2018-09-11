@@ -13,11 +13,18 @@
     <h1>LGBT+Music</h1>
     <hr/>
     <div>
-        <a href="/index">Home Page</a>
-        <a href="/list_artists">List of Artists</a>
-        <a href="/new_artist">Create New Artist</a>
+        <a href="{{ url_for("index") }}">Home Page</a>
+        <a href="{{ url_for("list_artists") }}">List of Artists</a>
+        <a href="{{ url_for("new_artist") }}">Create New Artist</a>
     </div>
     <hr/>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p style="background-color: greenyellow;">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 
     {% block content %}{% endblock %}
 
