@@ -4,7 +4,7 @@ from app import app
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', title='LGBT+Music Home')
+    return render_template('index.html', title='Home')
 
 
 @app.route('/list_artists')
@@ -15,12 +15,12 @@ def list_artists():
         {'name': 'King Princess'},
         {'name': 'Tegan and Sara'}
     ]
-    return render_template('list.html', title='Artist List - LGBT+Music', artists=artists)
+    return render_template('list.html', title='Artist List', artists=artists)
 
 
 @app.route('/new_artist')
 def new_artist():
-    return render_template('new.html', title='New Artist - LGBT+Music')
+    return render_template('new.html', title='New Artist')
 
 @app.route('/artist_page')
 def artist_page():
@@ -33,4 +33,4 @@ def artist_page():
                    'October 24: Club Academy, Manchester, UK',
                    'October 26: 02 Academy Islington, London, UK']
     }
-    return render_template('artist.html', title='Artist Page - LGBT+Music', artist=artist)
+    return render_template('artist.html', title='Artist Page', artist=artist)
