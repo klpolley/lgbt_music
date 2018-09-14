@@ -24,7 +24,13 @@ def new_artist():
     form = NewArtistForm()
     if form.validate_on_submit():
         flash('Artist Added!')
-        return redirect(url_for('index'))
+        artist = {
+            'name': form.name.data,
+            'bio': form.bio.data,
+            'hometown': form.hometown.data,
+            'events': []
+        }
+        return render_template('artist.html', title='ArtistPage', artist=artist)
     return render_template('new.html', title='New Artist', form=form)
 
 @app.route('/artist_page')
