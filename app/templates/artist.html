@@ -4,11 +4,13 @@
     <h2>{{ artist.name }}</h2>
     <p>Hometown: {{ artist.hometown }}</p>
     <p>Bio: {{ artist.bio }}</p>
-    <h4>Upcoming Events:</h4>
-    <ul>
-        {% for event in artist.events %}
-            <li>{{ event }}</li>
-        {% endfor %}
-    </ul>
+    {% if artist.events|length > 0 %}
+        <h4>Upcoming Events:</h4>
+        <ul>
+                {% for event in artist.events %}
+                    <li>{{ event }}</li>
+                {% endfor %}
+        </ul>
+    {% endif %}
 
 {% endblock %}

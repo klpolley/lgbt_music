@@ -10,7 +10,7 @@
 
         <p>
             {{ form.name.label }}<br/>
-            {{ form.name() }}<br/>
+            {{ form.name(size='30') }}<br/>
             {% for error in form.name.errors %}
                 <span style="color: red;">{{ error }}</span>
             {% endfor %}
@@ -18,7 +18,7 @@
 
         <p>
             {{ form.hometown.label }}<br/>
-            {{ form.hometown() }}<br/>
+            {{ form.hometown(size='30') }}<br/>
             {% for error in form.hometown.errors %}
                 <span style="color: red;">{{ error }}</span>
             {% endfor %}
@@ -26,7 +26,7 @@
 
         <p>
             {{ form.bio.label }}<br/>
-            {{ form.bio() }}<br/>
+            {{ form.bio(rows='10', cols='30') }}<br/>
             {% for error in form.bio.errors %}
                 <span style="color: red;">{{ error }}</span>
             {% endfor %}

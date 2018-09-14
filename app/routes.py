@@ -22,8 +22,9 @@ def list_artists():
 @app.route('/new_artist', methods=['GET', 'POST'])
 def new_artist():
     form = NewArtistForm()
+
     if form.validate_on_submit():
-        flash('Artist Added!')
+        flash('Artist Created: ' + form.name.data)
         artist = {
             'name': form.name.data,
             'bio': form.bio.data,
@@ -31,6 +32,7 @@ def new_artist():
             'events': []
         }
         return render_template('artist.html', title='ArtistPage', artist=artist)
+
     return render_template('new.html', title='New Artist', form=form)
 
 @app.route('/artist_page')
