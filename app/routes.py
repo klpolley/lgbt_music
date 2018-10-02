@@ -1,6 +1,7 @@
 from flask import render_template, flash, redirect, url_for
-from app import app
+from app import app, db
 from app.forms import NewArtistForm
+from app.models import Artist, Event, ArtistToEvent, Venue
 
 @app.route('/')
 @app.route('/index')
@@ -47,3 +48,17 @@ def artist_page():
                    'October 26: 02 Academy Islington, London, UK']
     }
     return render_template('artist.html', title='Artist Page', artist=artist)
+
+
+@app.route('/reset_db')
+def reset_db():
+    flash("Resetting Database: deleting old data and repopulating with dummy data")
+    # clear all data from all tables
+    meta = db.metadata
+    for table in reversed(meta.sorted_tables):
+        print('Clear table {}'.format(table))
+        db.session.execute(table.delete())
+    db.session.commit()
+
+    # populate tables with dummy data
+    artist = Artist(name="Test1",)
