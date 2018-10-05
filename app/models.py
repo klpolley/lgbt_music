@@ -5,7 +5,7 @@ class Artist(db.Model):
     name = db.Column(db.String(128), index=True, unique=True)
     hometown = db.Column(db.String(128))
     bio = db.Column(db.String(256))
-    events = db.relationship('ArtistToEvent', back_populates='artist', lazy='dynamic')
+    events = db.relationship('ArtistToEvent', back_populates='artist')
 
     def __repr__(self):
         return '<Artist {}>'.format(self.name)
@@ -15,8 +15,8 @@ class ArtistToEvent(db.Model):
     artist_id = db.Column(db.Integer, db.ForeignKey('artist.id'), primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('event.id'), primary_key=True)
     headliner = db.Column(db.Boolean)
-    artist = db.relationship("Artist", back_populates='events', lazy='dynamic')
-    event = db.relationship("Event", back_populates='artists', lazy='dynamic')
+    artist = db.relationship("Artist", back_populates='events')
+    event = db.relationship("Event", back_populates='artists')
 
     def __repr__(self):
         return '<Artist {}, Event {}>'.format(self.artist_id, self.event_id)
@@ -27,7 +27,7 @@ class Event(db.Model):
     name = db.Column(db.String(128), index=True)
     date = db.Column(db.String(64))
     venue_id = db.Column(db.Integer, db.ForeignKey('venue.id'))
-    artists = db.relationship('ArtistToEvent', back_populates='event', lazy='dynamic')
+    artists = db.relationship('ArtistToEvent', back_populates='event')
 
     def __repr__(self):
         return '<Event {}>'.format(self.name)

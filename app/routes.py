@@ -61,4 +61,39 @@ def reset_db():
     db.session.commit()
 
     # populate tables with dummy data
-    artist = Artist(name="Test1",)
+    artists = [
+        Artist(name="Hayley Kiyoko", hometown='Los Angeles, CA', bio=''),
+        Artist(name="King Princess", hometown='Brooklyn, CA', bio=''),
+        Artist(name="Janelle Monae", hometown='Atlanta, GA', bio=''),
+        Artist(name="Kehlani", hometown='Oakland, CA', bio=''),
+        Artist(name="Mary Lambert", hometown='Seattle, WA', bio='')
+    ]
+    db.session.add_all(artists)
+
+    venues = [
+        Venue(name='02 Academy Islington', city='London', country='England'),
+        Venue(name='Forum Theatre', city='Melbourne', country='Australia')
+    ]
+    db.session.add_all(venues)
+
+    events = [
+        Event(name='Expectations Tour 1', date='October 23, 2018', venue=venues[0]),
+        Event(name='Expectations Tour 2', date='October 26, 2018', venue=venues[0]),
+        Event(name='King Princess Tour', date='November 2, 2018', venue=venues[1]),
+    ]
+    db.session.add_all(events)
+
+    associations = [
+        ArtistToEvent(artist=artists[0], event=events[0], headliner=True),
+        ArtistToEvent(artist=artists[0], event=events[1], headliner=True),
+        ArtistToEvent(artist=artists[3], event=events[1], headliner=False),
+        ArtistToEvent(artist=artists[1], event=events[2], headliner=True),
+    ]
+    db.session.add_all(associations)
+
+    db.session.commit()
+
+    return redirect(url_for('index'))
+
+
+
