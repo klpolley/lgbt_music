@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbc216d4-82fe-4665-8f01-90aeeaf9856c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/alembic.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/env.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/script.py.mako" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/aea7d293f1ac_first_db_schema.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,28 +55,7 @@
         <item name="app" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
-        <item name="artist: table" type="ffe0bd85:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="app" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
         <item name="artist_to_event: table" type="ffe0bd85:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="app" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
-        <item name="event: table" type="ffe0bd85:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="app" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
-        <item name="sqlite_master: table" type="ffe0bd85:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -117,50 +101,52 @@
     <session id="1130962958">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="DATABASE/2c064629-0c08-4a19-96d8-93f36751ec52" value="1" />
           <entry key="DATABASE/e13e4341-d9a3-4788-b06c-ffd8d5636517" value="1" />
           <entry key="gitignore" value="2" />
           <entry key="html" value="4" />
-          <entry key="py" value="13" />
+          <entry key="py" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="4" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="13" />
-          <entry key="UML" value="1" />
+          <entry key="Python" value="15" />
+          <entry key="UML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="150" />
-          <entry key="py" value="1447" />
+          <entry key="py" value="1674" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="150" />
-          <entry key="Python" value="1447" />
+          <entry key="Python" value="1674" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="945">
               <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
@@ -172,14 +158,59 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+            <state relative-caret-position="15">
+              <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
               <folding>
-                <marker date="1538503436714" expanded="true" signature="43:48" ph="..." />
-                <marker date="1538503436714" expanded="true" signature="408:692" ph="..." />
-                <marker date="1538503436714" expanded="true" signature="714:719" ph="..." />
-                <marker date="1538503436714" expanded="true" signature="1081:1082" ph="..." />
+                <marker date="1538708628204" expanded="true" signature="43:48" ph="..." />
+                <marker date="1538708628204" expanded="true" signature="423:891" ph="..." />
+                <marker date="1538708628204" expanded="true" signature="913:918" ph="..." />
+                <marker date="1538708628204" expanded="true" signature="1294:1295" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="uml://DATABASE/2c064629-0c08-4a19-96d8-93f36751ec52">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>DATABASE</ID>
+              <OriginalElement>2c064629-0c08-4a19-96d8-93f36751ec52</OriginalElement>
+              <nodes>
+                <node x="441.5" y="0.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.sqlite_master</node>
+                <node x="222.0" y="168.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.event</node>
+                <node x="120.5" y="336.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.artist_to_event</node>
+                <node x="0.0" y="499.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.alembic_version</node>
+                <node x="217.5" y="0.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.venue</node>
+                <node x="0.0" y="168.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.artist</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.artist_to_event" target="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.artist">
+                  <point x="-41.75" y="-59.0" />
+                  <point x="162.25" y="311.0" />
+                  <point x="101.0" y="311.0" />
+                  <point x="0.0" y="59.0" />
+                </edge>
+                <edge source="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.artist_to_event" target="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.event">
+                  <point x="41.75" y="-59.0" />
+                  <point x="245.75" y="311.0" />
+                  <point x="307.0" y="311.0" />
+                  <point x="0.0" y="59.0" />
+                </edge>
+                <edge source="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.event" target="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.venue">
+                  <point x="0.0" y="-59.0" />
+                  <point x="0.0" y="59.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.887719298245614" x="300.0" y="280.0" />
+              <SelectedNodes>
+                <node>2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.sqlite_master</node>
+              </SelectedNodes>
+              <Categories>
+                <Category>Key columns</Category>
+                <Category>Columns</Category>
+              </Categories>
             </state>
           </provider>
         </entry>
@@ -243,8 +274,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/app/models.py" />
         <option value="$PROJECT_DIR$/app/routes.py" />
+        <option value="$PROJECT_DIR$/app/models.py" />
       </list>
     </option>
   </component>
@@ -277,6 +308,11 @@
               <item name="lgbt_music" type="b2602c69:ProjectViewProjectNode" />
               <item name="lgbt_music" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lgbt_music" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lgbt_music" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -340,11 +376,11 @@
     <frame x="49" y="23" width="1391" height="805" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4964937" visible="true" weight="0.16604893" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4964937" visible="true" weight="0.17049666" />
       <window_info id="Structure" order="1" sideWeight="0.5035063" side_tool="true" weight="0.27825466" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32959327" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.31556803" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994374" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -354,14 +390,14 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21879382" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.21879382" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32911393" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.24684952" />
+      <window_info active="true" anchor="right" id="Database" order="4" visible="true" weight="0.24684952" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4964937" visible="true" weight="0.27825466" />
@@ -451,44 +487,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/local_music.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="52" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -513,29 +516,101 @@
             <Category>Key columns</Category>
             <Category>Columns</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/versions/74503fc6e4a9_attempting_association_object.py" />
+    <entry file="file://$PROJECT_DIR$/app/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="52" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        <state relative-caret-position="15">
+          <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
           <folding>
-            <marker date="1538503436714" expanded="true" signature="43:48" ph="..." />
-            <marker date="1538503436714" expanded="true" signature="408:692" ph="..." />
-            <marker date="1538503436714" expanded="true" signature="714:719" ph="..." />
-            <marker date="1538503436714" expanded="true" signature="1081:1082" ph="..." />
+            <marker date="1538708628204" expanded="true" signature="43:48" ph="..." />
+            <marker date="1538708628204" expanded="true" signature="423:891" ph="..." />
+            <marker date="1538708628204" expanded="true" signature="913:918" ph="..." />
+            <marker date="1538708628204" expanded="true" signature="1294:1295" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
+    <entry file="uml://DATABASE/2c064629-0c08-4a19-96d8-93f36751ec52">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>2c064629-0c08-4a19-96d8-93f36751ec52</OriginalElement>
+          <nodes>
+            <node x="441.5" y="0.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.sqlite_master</node>
+            <node x="222.0" y="168.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.event</node>
+            <node x="120.5" y="336.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.artist_to_event</node>
+            <node x="0.0" y="499.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.alembic_version</node>
+            <node x="217.5" y="0.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.venue</node>
+            <node x="0.0" y="168.0">2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.artist</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.artist_to_event" target="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.artist">
+              <point x="-41.75" y="-59.0" />
+              <point x="162.25" y="311.0" />
+              <point x="101.0" y="311.0" />
+              <point x="0.0" y="59.0" />
+            </edge>
+            <edge source="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.artist_to_event" target="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.event">
+              <point x="41.75" y="-59.0" />
+              <point x="245.75" y="311.0" />
+              <point x="307.0" y="311.0" />
+              <point x="0.0" y="59.0" />
+            </edge>
+            <edge source="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.event" target="2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.venue">
+              <point x="0.0" y="-59.0" />
+              <point x="0.0" y="59.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.887719298245614" x="300.0" y="280.0" />
+          <SelectedNodes>
+            <node>2c064629-0c08-4a19-96d8-93f36751ec52.TABLE:main.sqlite_master</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
         </state>
       </provider>
     </entry>
