@@ -7,9 +7,18 @@
     {% if artist.events|length > 0 %}
         <h4>Upcoming Events:</h4>
         <ul>
-                {% for event in artist.events %}
-                    <li>{{ event }}</li>
-                {% endfor %}
+            {% for pair in artist.events %}
+                <li><b>{{ pair.event.name}}:</b>
+                    {{ pair.event.venue.name }},
+                    {{ pair.event.venue.city }}, {{ pair.event.venue.country }}
+                    <ul>
+                        <li>{{ pair.event.date }}</li>
+                        {% if pair.headliner %}
+                            <li>Headlining</li>
+                        {% endif %}
+                    </ul>
+                </li>
+            {% endfor %}
         </ul>
     {% endif %}
 
