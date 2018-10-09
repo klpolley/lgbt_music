@@ -21,7 +21,7 @@ def new_artist():
 
     if form.validate_on_submit():
         flash('Artist Created: ' + form.name.data)
-        artist = Artist(name=form.name.data, hometown=form.hometown.data, bio=form.bio.data)
+        artist = Artist(name=form.name.data.strip(), hometown=form.hometown.data.strip(), bio=form.bio.data.strip())
         db.session.add(artist)
         db.session.commit()
 
@@ -33,7 +33,7 @@ def new_artist():
 def artist_page(name):
     artist = Artist.query.filter_by(name=name).first()
     if artist is None:
-        flash('Artist ' + name + ' does not exist')
+        flash('Artist "' + name + '" does not exist in the database')
         return redirect(url_for('list_artists'))
     artist_info = {
         'name': artist.name,
@@ -60,7 +60,7 @@ def reset_db():
         Artist(name='King Princess', hometown='Brooklyn, CA', bio='This singer-songwriter is known for her personal narrative lyrics'),
         Artist(name='Janelle Monae', hometown='Atlanta, GA', bio='An accomplished musician and actor with a captivating voice'),
         Artist(name='Kehlani', hometown='Oakland, CA', bio='R&B and hip-hop that anyone can get into'),
-        Artist(name='The Indigo Girls', hometown='Atlanta, GA', bio='The iconic, award-winning lesbian folk rock duo'),
+        Artist(name='The Indigo Girls', hometown='Athens, GA', bio='The iconic, award-winning lesbian folk rock duo'),
         Artist(name='Amythyst Kiah', hometown='Johnson City, TN', bio='A Southern Gothic songster with a hypnotic sound'),
     ]
     db.session.add_all(artists)
