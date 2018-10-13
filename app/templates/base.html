@@ -3,9 +3,9 @@
 
 <head>
     {% if title %}
-    <title>{{ title }} - LGBT+Music</title>
+        <title>{{ title }} - LGBT+Music</title>
     {% else %}
-    <title>LGBT+Music</title>
+        <title>LGBT+Music</title>
     {% endif %}
 </head>
 
@@ -13,9 +13,14 @@
     <h1>LGBT+Music</h1>
     <hr/>
     <div>
-        <a href="{{ url_for("index") }}">Home Page</a>
-        <a href="{{ url_for("list_artists") }}">List of Artists</a>
-        <a href="{{ url_for("new_artist") }}">Create New Artist</a>
+        <a href="{{ url_for('index') }}">Home Page</a>
+        <a href="{{ url_for('list_artists') }}">List of Artists</a>
+        {% if current_user.is_anonymous %}
+            <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+            <a href="{{ url_for("new_artist") }}">Create New Artist</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
     </div>
     <hr/>
     {% with messages = get_flashed_messages() %}
