@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db
-from app.forms import NewArtistForm, LoginForm, RegistrationForm
+from app.forms import NewArtistForm, LoginForm, RegistrationForm, NewVenueForm
 from app.models import Artist, Event, ArtistToEvent, Venue, User
 from werkzeug.urls import url_parse
 
@@ -65,7 +65,22 @@ def new_artist():
 
         return redirect(url_for('list_artists'))
 
-    return render_template('new.html', title='New Artist', form=form)
+    return render_template('new_artist.html', title='New Artist', form=form)
+
+@app.route('/new_venue', methods=['GET', 'POST'])
+@login_required
+def new_venue():
+    form = NewVenueForm()
+
+    if form.validate_on_submit():
+        flash('Venue Created: ' + form.name.data)
+        venue = Venue(name=form.name.data.strip(), city=form.city.data.strip(), country=form.country.data.strip())
+        db.session.add(venue)
+        db.session.commit()
+
+        return redirect(url_for('list_artists'))
+
+    return render_template('new_venue.html', title='New Venue', form=form)
 
 @app.route('/artists/<name>')
 def artist_page(name):

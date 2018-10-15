@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField, PasswordField, BooleanField
 from wtforms.validators import DataRequired, ValidationError, EqualTo, Email
-from app.models import Artist, User
+from app.models import Artist, User, Venue
 
 class NewArtistForm(FlaskForm):
     name = StringField('Artist Name', validators=[DataRequired()])
@@ -13,6 +13,17 @@ class NewArtistForm(FlaskForm):
         user = Artist.query.filter_by(name=name.data).first()
         if user is not None:
             raise ValidationError('This artist already exists.')
+
+class NewVenueForm(FlaskForm):
+    name = StringField('Venue Name', validators=[DataRequired()])
+    city = StringField('City', validators=[DataRequired()])
+    country = TextAreaField('Country', validators=[DataRequired()])
+    submit = SubmitField('Create Venue')
+
+    def validate_name(self, name):
+        user = Venue.query.filter_by(name=name.data).first()
+        if user is not None:
+            raise ValidationError('This venue already exists.')
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
