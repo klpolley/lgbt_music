@@ -28,7 +28,6 @@
     <index id="14" parent="6" name="sqlite_autoindex_alembic_version_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>version_num</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="15" parent="6" name="alembic_version_pkc">
@@ -55,7 +54,6 @@
     </column>
     <index id="20" parent="7" name="ix_artist_name">
       <ColNames>name</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="21" parent="7">
@@ -80,7 +78,6 @@
       <NameSurrogate>1</NameSurrogate>
       <ColNames>artist_id
 event_id</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="26" parent="8">
@@ -121,7 +118,6 @@ event_id</ColNames>
     </column>
     <index id="34" parent="9" name="ix_event_name">
       <ColNames>name</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="35" parent="9">
       <ColNames>id</ColNames>
@@ -171,12 +167,10 @@ event_id</ColNames>
     </column>
     <index id="46" parent="11" name="ix_user_username">
       <ColNames>username</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="47" parent="11" name="ix_user_email">
       <ColNames>email</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="48" parent="11">

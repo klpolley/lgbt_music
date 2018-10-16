@@ -12,7 +12,7 @@
                     {{ pair.event.venue.name }},
                     {{ pair.event.venue.city }}, {{ pair.event.venue.country }}
                     <ul>
-                        <li>{{ pair.event.date }}</li>
+                        <li>{{ pair.event.date.strftime('%A, %b %d %Y') }}</li>
                         {% if pair.headliner %}
                             <li>Headlining</li>
                         {% endif %}

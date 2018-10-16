@@ -4,6 +4,7 @@ from app import app, db
 from app.forms import NewArtistForm, LoginForm, RegistrationForm, NewVenueForm
 from app.models import Artist, Event, ArtistToEvent, Venue, User
 from werkzeug.urls import url_parse
+from datetime import date
 
 @app.route('/')
 @app.route('/index')
@@ -127,12 +128,12 @@ def reset_db():
     db.session.add_all(venues)
 
     events = [
-        Event(name='Expectations Tour 1', date='October 23, 2018', venue=venues[0]),
-        Event(name='Expectations Tour 2', date='October 26, 2018', venue=venues[0]),
-        Event(name='King Princess Tour', date='November 2, 2018', venue=venues[1]),
-        Event(name='King Princess For Real', date='December 17, 2018', venue=venues[2]),
-        Event(name='Amy Ray & Her Band', date='November 14, 2018', venue=venues[2]),
-        Event(name='Voodoo Music + Arts Experience', date='October 26, 2018', venue=venues[3]),
+        Event(name='Expectations Tour 1', date=date(2018, 10, 23), venue=venues[0]),
+        Event(name='Expectations Tour 2', date=date(2018, 10, 26), venue=venues[0]),
+        Event(name='King Princess Tour', date=date(2018, 11, 2), venue=venues[1]),
+        Event(name='King Princess For Real', date=date(2018, 12, 19), venue=venues[2]),
+        Event(name='Amy Ray & Her Band', date=date(2018, 11, 14), venue=venues[2]),
+        Event(name='Voodoo Music + Arts Experience', date=date(2018, 10, 26), venue=venues[3]),
     ]
     db.session.add_all(events)
 
