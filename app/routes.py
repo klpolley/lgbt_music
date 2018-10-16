@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user, login_required
 from app import app, db
-from app.forms import NewArtistForm, LoginForm, RegistrationForm, NewVenueForm
+from app.forms import NewArtistForm, LoginForm, RegistrationForm, NewVenueForm, NewEventForm
 from app.models import Artist, Event, ArtistToEvent, Venue, User
 from werkzeug.urls import url_parse
 from datetime import date
@@ -49,7 +49,7 @@ def register():
 
 @app.route('/artists')
 def list_artists():
-    artists = Artist.query.all()
+    artists = Artist.query.order_by('name')
     return render_template('list.html', title='Artist List', artists=artists)
 
 
@@ -82,6 +82,37 @@ def new_venue():
         return redirect(url_for('list_artists'))
 
     return render_template('new_venue.html', title='New Venue', form=form)
+
+@app.route('/new_event', methods=['GET', 'POST'])
+@login_required
+def new_event() :
+    form = NewEventForm()
+
+    form.venue.choices = [(v.id, v.name) for v in Venue.query.order_by('name')]
+    form.artists.choices = [(a.id, a.name) for a in Artist.query.order_by('name')]
+
+    if form.validate_on_submit():
+        flash('Event Created: ' + form.name.data)
+        venue = Venue.query.filter_by(id = form.venue.data).first()
+        event = Event(name=form.name.data.strip(), date=form.date.data, venue=venue)
+        db.session.add(event)
+
+        artists = []
+        for id in form.artists.data:
+            artist = Artist.query.filter_by(id = id).first()
+            artists.append(artist)
+
+        associations = []
+        for a in artists:
+            associations.append(ArtistToEvent(artist=a, event=event))
+
+        db.session.add_all(associations)
+
+        db.session.commit()
+
+        return redirect(url_for('list_artists'))
+
+    return render_template('new_event.html', title='New Event', form=form)
 
 @app.route('/artists/<name>')
 def artist_page(name):
@@ -138,16 +169,20 @@ def reset_db():
     db.session.add_all(events)
 
     associations = [
-        ArtistToEvent(artist=artists[0], event=events[0], headliner=True),
-        ArtistToEvent(artist=artists[0], event=events[1], headliner=True),
-        ArtistToEvent(artist=artists[3], event=events[1], headliner=False),
-        ArtistToEvent(artist=artists[1], event=events[2], headliner=True),
-        ArtistToEvent(artist=artists[1], event=events[3], headliner=True),
-        ArtistToEvent(artist=artists[4], event=events[4], headliner=True),
-        ArtistToEvent(artist=artists[5], event=events[4], headliner=False),
-        ArtistToEvent(artist=artists[2], event=events[5], headliner=False),
+        ArtistToEvent(artist=artists[0], event=events[0]),
+        ArtistToEvent(artist=artists[0], event=events[1]),
+        ArtistToEvent(artist=artists[3], event=events[1]),
+        ArtistToEvent(artist=artists[1], event=events[2]),
+        ArtistToEvent(artist=artists[1], event=events[3]),
+        ArtistToEvent(artist=artists[4], event=events[4]),
+        ArtistToEvent(artist=artists[5], event=events[4]),
+        ArtistToEvent(artist=artists[2], event=events[5]),
     ]
     db.session.add_all(associations)
+
+    user = User(username='kate', email='kate@kate.com')
+    user.set_password('cat')
+    db.session.add(user)
 
     db.session.commit()
 

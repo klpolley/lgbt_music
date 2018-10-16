@@ -9,13 +9,10 @@
         <ul>
             {% for pair in artist.events %}
                 <li><b>{{ pair.event.name}}:</b>
-                    {{ pair.event.venue.name }},
-                    {{ pair.event.venue.city }}, {{ pair.event.venue.country }}
                     <ul>
                         <li>{{ pair.event.date.strftime('%A, %b %d %Y') }}</li>
-                        {% if pair.headliner %}
-                            <li>Headlining</li>
-                        {% endif %}
+                        <li>{{ pair.event.venue.name }}</li>
+                        <li>{{ pair.event.venue.city }}, {{ pair.event.venue.country }}</li>
                     </ul>
                 </li>
             {% endfor %}

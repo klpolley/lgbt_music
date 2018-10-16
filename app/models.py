@@ -16,7 +16,6 @@ class Artist(db.Model):
 class ArtistToEvent(db.Model):
     artist_id = db.Column(db.Integer, db.ForeignKey('artist.id'), primary_key=True)
     event_id = db.Column(db.Integer, db.ForeignKey('event.id'), primary_key=True)
-    headliner = db.Column(db.Boolean)
     artist = db.relationship("Artist", back_populates='events')
     event = db.relationship("Event", back_populates='artists')
 

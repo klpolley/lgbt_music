@@ -1,8 +1,8 @@
-"""user
+"""please work
 
-Revision ID: 8be404d8443a
+Revision ID: bb5bf17b800f
 Revises: 
-Create Date: 2018-10-13 16:40:36.997622
+Create Date: 2018-10-16 15:16:02.071710
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '8be404d8443a'
+revision = 'bb5bf17b800f'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -45,7 +45,7 @@ def upgrade():
     op.create_table('event',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=128), nullable=True),
-    sa.Column('date', sa.String(length=64), nullable=True),
+    sa.Column('date', sa.DateTime(), nullable=True),
     sa.Column('venue_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['venue_id'], ['venue.id'], ),
     sa.PrimaryKeyConstraint('id')
@@ -54,7 +54,6 @@ def upgrade():
     op.create_table('artist_to_event',
     sa.Column('artist_id', sa.Integer(), nullable=False),
     sa.Column('event_id', sa.Integer(), nullable=False),
-    sa.Column('headliner', sa.Boolean(), nullable=True),
     sa.ForeignKeyConstraint(['artist_id'], ['artist.id'], ),
     sa.ForeignKeyConstraint(['event_id'], ['event.id'], ),
     sa.PrimaryKeyConstraint('artist_id', 'event_id')
