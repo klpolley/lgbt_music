@@ -1,41 +1,46 @@
-<html>
+{% extends 'bootstrap/base.html' %}
 
-
-<head>
+{% block title %}
     {% if title %}
-        <title>{{ title }} - LGBT+Music</title>
+        {{ title }} - LGBT+Music
     {% else %}
-        <title>LGBT+Music</title>
+        LGBT+Music
     {% endif %}
-</head>
+{% endblock %}
 
-<body>
-    <h1>LGBT+Music</h1>
-    <hr/>
-    <div>
-        <a href="{{ url_for('index') }}">Home Page</a>
-        <a href="{{ url_for('list_artists') }}">List of Artists</a>
+
+{% block navbar %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">LGBT+MUSIC</span>
+
+        <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+        <a class="nav-item nav-link" href="{{ url_for('list_artists') }}">List of Artists</a>
         {% if current_user.is_anonymous %}
-            <a href="{{ url_for('login') }}">Login</a>
+            <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
         {% else %}
-            <a href="{{ url_for("new_artist") }}">Create New Artist</a>
-            <a href="{{ url_for("new_venue") }}">Create New Venue</a>
-            <a href="{{ url_for("new_event") }}">Create New Event</a>
-            <a href="{{ url_for('logout') }}">Logout</a>
+            <a class="nav-item nav-link" href="{{ url_for("new_artist") }}">Create New Artist</a>
+            <a class="nav-item nav-link" href="{{ url_for("new_venue") }}">Create New Venue</a>
+            <a class="nav-item nav-link" href="{{ url_for("new_event") }}">Create New Event</a>
+            <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
         {% endif %}
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-info" role="alert">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block app_content %}{% endblock %}
     </div>
-    <hr/>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <p style="background-color: greenyellow;">{{ message }}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-
-    {% block content %}{% endblock %}
-
-</body>
+{% endblock %}
 
 
-</html>
+
