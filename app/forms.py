@@ -28,7 +28,7 @@ class NewVenueForm(FlaskForm):
 
 class NewEventForm(FlaskForm):
     name = StringField('Event Name', validators=[DataRequired()])
-    date = DateField('Date', format='%m-%d-%Y', validators=[DataRequired()])
+    date = DateField('Date: MM-DD-YYYY', format='%m-%d-%Y', validators=[DataRequired()])
     venue = SelectField('Venue', coerce=int, validators=[DataRequired()])
     artists = SelectMultipleField('Artists', coerce=int, validators=[DataRequired()])
     submit = SubmitField('Create Event')
